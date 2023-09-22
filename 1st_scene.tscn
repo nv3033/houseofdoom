@@ -1,0 +1,276 @@
+[gd_scene load_steps=24 format=3 uid="uid://bbxictjjlh8fi"]
+
+[ext_resource type="Texture2D" uid="uid://b2xfhj3kr6ou4" path="res://wall.png" id="1_6k0lb"]
+[ext_resource type="Texture2D" uid="uid://cyapew4pjaxyl" path="res://character1.png" id="1_lyn56"]
+[ext_resource type="Script" path="res://Camera.gd" id="2_3okc6"]
+[ext_resource type="Texture2D" uid="uid://cndxnie03kac" path="res://floor.png" id="2_5fh2h"]
+[ext_resource type="Script" path="res://Character.gd" id="3_0sqbn"]
+[ext_resource type="Texture2D" uid="uid://colbnkvy1qb1t" path="res://character2.png" id="4_3a23i"]
+[ext_resource type="Texture2D" uid="uid://cgs4kse2tuwbl" path="res://bible.png" id="7_rwjks"]
+[ext_resource type="Texture2D" uid="uid://hoija4e26tbc" path="res://chest.png" id="8_sg6vy"]
+[ext_resource type="Texture2D" uid="uid://xgwdq37nrccs" path="res://sword.png" id="9_5n481"]
+[ext_resource type="Texture2D" uid="uid://c6jlrh2ukq1p1" path="res://torch.png" id="10_1mpmk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4i7q"]
+size = Vector2(18, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggu3f"]
+size = Vector2(256, 6)
+
+[sub_resource type="Animation" id="Animation_k1nvg"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(89, 14), Vector2(89, 16), Vector2(89, 14)]
+}
+
+[sub_resource type="Animation" id="Animation_jg51q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(89, 14)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwge7"]
+_data = {
+"RESET": SubResource("Animation_jg51q"),
+"idle": SubResource("Animation_k1nvg")
+}
+
+[sub_resource type="Animation" id="Animation_7quae"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(541, 13), Vector2(541, 15), Vector2(541, 13)]
+}
+
+[sub_resource type="Animation" id="Animation_2csll"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(541, 13)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_112xg"]
+_data = {
+"RESET": SubResource("Animation_2csll"),
+"idle": SubResource("Animation_7quae")
+}
+
+[sub_resource type="Animation" id="Animation_vxva7"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(864, 10), Vector2(864, 12), Vector2(864, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_yuwhf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(864, 12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wtjbk"]
+_data = {
+"RESET": SubResource("Animation_yuwhf"),
+"idle": SubResource("Animation_vxva7")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0lm8"]
+size = Vector2(13, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gnouw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lyn56")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lyn56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3a23i")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 2.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2(-37, 3.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+shape = SubResource("RectangleShape2D_f4i7q")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(30, 0)
+zoom = Vector2(10, 10)
+script = ExtResource("2_3okc6")
+
+[node name="back_ground" type="Sprite2D" parent="Camera2D"]
+modulate = Color(0.435294, 0.435294, 0.435294, 1)
+texture_filter = 3
+position = Vector2(70, 0)
+texture = ExtResource("1_6k0lb")
+
+[node name="Floor" type="Sprite2D" parent="."]
+modulate = Color(0.807843, 0.807843, 0.807843, 1)
+texture_filter = 3
+position = Vector2(100, 0)
+texture = ExtResource("2_5fh2h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_ggu3f")
+
+[node name="Floor2" type="Sprite2D" parent="."]
+modulate = Color(0.807843, 0.807843, 0.807843, 1)
+texture_filter = 3
+position = Vector2(356, 0)
+texture = ExtResource("2_5fh2h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2/StaticBody2D"]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_ggu3f")
+
+[node name="Floor3" type="Sprite2D" parent="."]
+modulate = Color(0.807843, 0.807843, 0.807843, 1)
+texture_filter = 3
+position = Vector2(612, 0)
+texture = ExtResource("2_5fh2h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3/StaticBody2D"]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_ggu3f")
+
+[node name="Floor4" type="Sprite2D" parent="."]
+modulate = Color(0.807843, 0.807843, 0.807843, 1)
+texture_filter = 3
+position = Vector2(868, 0)
+texture = ExtResource("2_5fh2h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4/StaticBody2D"]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_ggu3f")
+
+[node name="Bible" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(89, 14)
+texture = ExtResource("7_rwjks")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bible"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_rwge7")
+}
+
+[node name="Chest" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(345, 22)
+texture = ExtResource("8_sg6vy")
+
+[node name="Sword" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(541, 13)
+texture = ExtResource("9_5n481")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sword"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_112xg")
+}
+
+[node name="Torch" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(864, 12)
+texture = ExtResource("10_1mpmk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Torch"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_wtjbk")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+script = ExtResource("3_0sqbn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_j0lm8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_gnouw")
+animation = &"walk"
+frame = 1
+frame_progress = 0.627543
