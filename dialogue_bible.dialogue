@@ -1,0 +1,122 @@
+~ start
+
+set has_started = true
+do check_state()
+
+hm... [wait=1]the bible[wait=2].
+- I remember reading it when I was young.
+	I remember reading it when I was young.
+	- So many mysteries lay beyond this charapters.
+		So many mysteries lay beyond this charapters.
+		- How dare am I forgetting some lines from it.
+			=> how_dare_am_i
+	- How dare am I forgetting some lines from it.
+		=> how_dare_am_i
+- Holy scripture... 
+	=> holy_scripture
+- I really should pray more often.[wait=2] My soul is not protected enough. 
+	I really should pray more often.[wait=2] My soul is not protected enough.
+	=> end_values
+
+~ how_dare_am_i
+How dare am I forgetting some lines from it.
+- There was no other book in my house for some time.
+	There was no other book in my house for some time.[wait=1] I vaguely remember reading psalms.
+	All night long.
+	- Old tastamend always seemed more interesting to me.
+		Old tastamend always seemed more interesting to me.
+		There was a lot of new things to me [wait=0.5]that I woundn't know the other way... 
+		- Stories about holy rage...
+			Stories about holy rage which was blessed some time ago.
+			To be one of the spirits I know.
+			How strange is this.
+			- I want to be a better person.
+				I want to be a better person.
+				=> if_only_i
+			- I was the better person.
+				I was the better person.
+				And this is what this book reminds me of.
+				=> if_only_i
+		- ...or souldn't know.
+			...or souldn't know.
+			=> holy_scripture
+	- New tastamend always seemed more interesting to me.
+		New tastamend always seemed more interesting to me.
+		Particularly the gospels.
+		- Gospel of John was the only book I would carry with me until my last breath.
+			Gospel of John was the only book I would carry with me until my last breath.
+			I remember there was some parts I was stunned by.
+			Maybe I can think about it more often.
+			However.
+			It is clear for me I will never be in one of this books.
+			- If only I could write some charapters.
+				=> if_only_i
+			- Or be honored as the writers once was.
+				Or be honored as the writers once was.
+				What a shame.
+				What the thing am I to be so miserable.
+				- I want to be forgived.
+					I want to be forgived.
+					=> if_only_i
+				- I do not deserve forgiveness.
+					=> if_only_i
+		- If only there was more of them.
+			If only there was more of them.
+			I never thought so.
+			Maybe there is.
+			=> if_only_i
+- If only I could speak with the writers.
+	If only I could speak with the writers.[wait=1] Mysterious masters from the past.
+	I think there were something hidden at the time.
+	This book is so bright but at the same time so obscured.
+	- If only I could write some charapters.
+		=> if_only_i
+- If only I could write some charapters.
+	=> if_only_i
+
+~ if_only_i
+If only I could write some charapters.
+- This would be biggest mistake humanity ever made.
+	This would be biggest mistake humanity ever made.
+	=> end_values
+- This would be great honor for me.
+	This would be great honor for me.
+	- As the person who is enlighted enough.
+		As the person who is enlighted enough.
+		I don't think it is what should happen.
+		=> end_values
+	- As a sinner who wants to be cleared.
+		As a sinner who wants to be cleared.
+		This gonna be the only way for me.
+		I don't think it is what should happen.
+		=> end_values
+
+
+~ holy_scripture
+Holy scripture...
+...the only way to be out of this world
+- Death to the world.
+	Death to the world.
+	Is gonna be a long way
+	- But I am brave enough.
+		But I am brave enough.
+		As the writers of this book.
+		=> if_only_i
+	- But I have no choise.
+		But I have no choise.
+		And this is what pisses me of.
+		- My rage must be destroyed.
+			My rage must be destroyed.
+			By whom?..
+			=> end_values
+		- My rage must be forgived.
+			My rage must be forgived.
+			=> end_values
+- Death of the world...
+	Death of the world will be fast.
+	=> end_values
+
+
+~ end_values
+set has_started = false
+do change_scene()

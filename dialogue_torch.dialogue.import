@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://8sd5u51ubw0s"
+path="res://.godot/imported/dialogue_torch.dialogue-ee1b8710a1b655408dd9072e1e88254c.tres"
+
+[deps]
+
+source_file="res://dialogue_torch.dialogue"
+dest_files=["res://.godot/imported/dialogue_torch.dialogue-ee1b8710a1b655408dd9072e1e88254c.tres"]
+
+[params]
+
+defaults=true

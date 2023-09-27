@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://do13entsgo5tx"
+path="res://.godot/imported/dialogue_bible.dialogue-923c1ed256bcd5521332d132884c3592.tres"
+
+[deps]
+
+source_file="res://dialogue_bible.dialogue"
+dest_files=["res://.godot/imported/dialogue_bible.dialogue-923c1ed256bcd5521332d132884c3592.tres"]
+
+[params]
+
+defaults=true

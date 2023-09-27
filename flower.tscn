@@ -1,0 +1,231 @@
+[gd_scene load_steps=35 format=3 uid="uid://dseyk3iqq3y2j"]
+
+[ext_resource type="Texture2D" uid="uid://c4vhv7502aqwv" path="res://flower_animation/pixil-frame-0(1).png" id="1_0a3rn"]
+[ext_resource type="Texture2D" uid="uid://bqfm0i54kr1pu" path="res://flower_animation/pixil-frame-0(3).png" id="2_lhwq8"]
+[ext_resource type="Texture2D" uid="uid://d0cyipbrv62pk" path="res://flower_animation/pixil-frame-0(4).png" id="3_2j2ke"]
+[ext_resource type="Texture2D" uid="uid://c16hlqpf65gil" path="res://flower_animation/pixil-frame-0(5).png" id="4_0ayk1"]
+[ext_resource type="Texture2D" uid="uid://lpaejvw51fiy" path="res://flower_animation/pixil-frame-0(6).png" id="5_5rj0j"]
+[ext_resource type="Texture2D" uid="uid://dmdbjaaxutabe" path="res://flower_animation/pixil-frame-0(7).png" id="6_v40xw"]
+[ext_resource type="Texture2D" uid="uid://bf48aaccl0yxs" path="res://flower_animation/pixil-frame-0(8).png" id="7_d30of"]
+[ext_resource type="Texture2D" uid="uid://bep0vcgaxgqde" path="res://flower_animation/pixil-frame-0(9).png" id="8_u3ujn"]
+[ext_resource type="Texture2D" uid="uid://b1qa1pdqqkjca" path="res://flower_animation/pixil-frame-0(10).png" id="9_bedkr"]
+[ext_resource type="Texture2D" uid="uid://b2uamf5ctiwu8" path="res://flower_animation/pixil-frame-0(11).png" id="10_517le"]
+[ext_resource type="Texture2D" uid="uid://bpw77slchot1f" path="res://flower_animation/pixil-frame-0(12).png" id="11_w2cob"]
+[ext_resource type="Texture2D" uid="uid://dwfiysbot7bud" path="res://flower_animation/pixil-frame-0(13).png" id="12_f378r"]
+[ext_resource type="Texture2D" uid="uid://bfxvuyn0klo4q" path="res://flower_animation/pixil-frame-0(14).png" id="13_cflxn"]
+[ext_resource type="Texture2D" uid="uid://cekmh4qiujxpf" path="res://flower_animation/pixil-frame-0(15).png" id="14_juxgj"]
+[ext_resource type="Texture2D" uid="uid://cq2jcwlr152kk" path="res://flower_animation/pixil-frame-0(16).png" id="15_f4eng"]
+[ext_resource type="Texture2D" uid="uid://bssl822f2j6ei" path="res://flower_animation/pixil-frame-0(17).png" id="16_4pewo"]
+[ext_resource type="Texture2D" uid="uid://b4u3nii2qa8fu" path="res://flower_animation/pixil-frame-0(18).png" id="17_5j7qe"]
+[ext_resource type="Texture2D" uid="uid://hn3dsj2ospqs" path="res://flower_animation/pixil-frame-0(19).png" id="18_l6j68"]
+[ext_resource type="Texture2D" uid="uid://4ljua1o2t1ac" path="res://flower_animation/pixil-frame-0(20).png" id="19_78ti0"]
+[ext_resource type="Texture2D" uid="uid://d12y3ixr0sw0b" path="res://flower_animation/pixil-frame-0(21).png" id="20_nm2k6"]
+[ext_resource type="Texture2D" uid="uid://cmith2r37sby6" path="res://flower_animation/pixil-frame-0(22).png" id="21_si5a2"]
+[ext_resource type="Texture2D" uid="uid://6ll8lelvtxpx" path="res://flower_animation/pixil-frame-0(23).png" id="22_6xmnp"]
+[ext_resource type="Texture2D" uid="uid://ccvwfvvobna0s" path="res://flower_animation/pixil-frame-0(24).png" id="23_7hjp1"]
+[ext_resource type="Texture2D" uid="uid://ss7f2be80m1y" path="res://flower_animation/pixil-frame-0(25).png" id="24_dl648"]
+[ext_resource type="Texture2D" uid="uid://dx7qe7vj4yvye" path="res://flower_animation/pixil-frame-0(26).png" id="25_k8ew2"]
+[ext_resource type="Texture2D" uid="uid://ercwah0w6qv5" path="res://flower_animation/pixil-frame-0(27).png" id="26_axl6p"]
+[ext_resource type="Texture2D" uid="uid://uhq4wrxfh81x" path="res://flower_animation/pixil-frame-0(28).png" id="27_lbb4v"]
+[ext_resource type="Texture2D" uid="uid://y0vqpcbwrknf" path="res://flower_animation/pixil-frame-0(29).png" id="28_qx0h7"]
+[ext_resource type="Texture2D" uid="uid://b2xfhj3kr6ou4" path="res://wall.png" id="30_u3hl2"]
+[ext_resource type="Script" path="res://scene_switch.gd" id="30_vo6jb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ai65g"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("1_0a3rn")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_lhwq8")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_2j2ke")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_0ayk1")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_5rj0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v40xw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d30of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u3ujn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bedkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_517le")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_w2cob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_f378r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cflxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_juxgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_f4eng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4pewo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5j7qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_l6j68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_78ti0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nm2k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_si5a2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6xmnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_7hjp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_dl648")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_k8ew2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_axl6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lbb4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qx0h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lbb4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qx0h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lbb4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qx0h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lbb4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qx0h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lbb4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qx0h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lbb4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qx0h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lbb4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qx0h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lbb4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qx0h7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="Animation" id="Animation_ojwj0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3rxkt"]
+resource_name = "scene_start"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 2, 13, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tsqqi"]
+_data = {
+"RESET": SubResource("Animation_ojwj0"),
+"scene_start": SubResource("Animation_3rxkt")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_ai65g")
+autoplay = "default"
+frame = 41
+frame_progress = 1.0
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+zoom = Vector2(10, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D2"]
+modulate = Color(0, 0, 0, 1)
+visibility_layer = 3
+z_index = 1
+texture_filter = 3
+texture = ExtResource("30_u3hl2")
+
+[node name="black_screne" type="AnimationPlayer" parent="Camera2D2/Sprite2D"]
+autoplay = "scene_start"
+libraries = {
+"": SubResource("AnimationLibrary_tsqqi")
+}
+script = ExtResource("30_vo6jb")
+
+[connection signal="animation_finished" from="Camera2D2/Sprite2D/black_screne" to="Camera2D2/Sprite2D/black_screne" method="_on_animation_finished"]

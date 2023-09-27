@@ -64,7 +64,7 @@ static func get_user_config() -> Dictionary:
 		just_refreshed = null,
 		recent_files = [],
 		carets = {},
-		run_title = "",
+		run_title = "start",
 		run_resource_path = "",
 		is_running_test_scene = false
 	}

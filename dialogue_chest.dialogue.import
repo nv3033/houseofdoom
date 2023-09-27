@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://cppg72lneygen"
+path="res://.godot/imported/dialogue_chest.dialogue-b19270589124dba6442752d4f905adad.tres"
+
+[deps]
+
+source_file="res://dialogue_chest.dialogue"
+dest_files=["res://.godot/imported/dialogue_chest.dialogue-b19270589124dba6442752d4f905adad.tres"]
+
+[params]
+
+defaults=true

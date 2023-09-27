@@ -13,16 +13,34 @@ config_version=5
 config/name="House Of Doom"
 run/main_scene="res://1st_scene.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+dialogue_autoload="*res://1st_scene_autoload.gd"
+
+[dialogue_manager]
+
+general/states=["dialogue_autoload"]
+
+[display]
+
+window/size/resizable=false
+window/size/window_width_override=1152
+window/size/window_height_override=648
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogue_bible.dialogue", "res://dialogue_chest.dialogue", "res://dialogue_sword.dialogue", "res://dialogue_torch.dialogue")
+
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
