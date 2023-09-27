@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3rsg657fetok"
+path="res://.godot/imported/black sun void - Chapter X - 10 Cosmic Journey.mp3-edc8999a34045e8f2fc337c11466f568.mp3str"
+
+[deps]
+
+source_file="res://music/black sun void - Chapter X - 10 Cosmic Journey.mp3"
+dest_files=["res://.godot/imported/black sun void - Chapter X - 10 Cosmic Journey.mp3-edc8999a34045e8f2fc337c11466f568.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

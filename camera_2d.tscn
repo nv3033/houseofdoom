@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjibwq8kucq4g"]
+[gd_scene load_steps=9 format=3 uid="uid://bot0p58m6yelp"]
 
 [ext_resource type="Script" path="res://Camera.gd" id="1_elkl2"]
 [ext_resource type="Texture2D" uid="uid://b2xfhj3kr6ou4" path="res://wall.png" id="2_f68vr"]
@@ -47,12 +47,6 @@ _data = {
 position = Vector2(48, 0)
 zoom = Vector2(10, 10)
 script = ExtResource("1_elkl2")
-
-[node name="back_ground" type="Sprite2D" parent="."]
-modulate = Color(0.435294, 0.435294, 0.435294, 1)
-texture_filter = 3
-position = Vector2(70, 0)
-texture = ExtResource("2_f68vr")
 
 [node name="Inventory" type="Sprite2D" parent="." groups=["Inventory"]]
 modulate = Color(0.74902, 0.74902, 0.74902, 1)

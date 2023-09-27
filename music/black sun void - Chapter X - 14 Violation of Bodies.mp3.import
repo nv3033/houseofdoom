@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0ux2nmgg5omg"
+path="res://.godot/imported/black sun void - Chapter X - 14 Violation of Bodies.mp3-748858f945e05463257c4b9d6b380290.mp3str"
+
+[deps]
+
+source_file="res://music/black sun void - Chapter X - 14 Violation of Bodies.mp3"
+dest_files=["res://.godot/imported/black sun void - Chapter X - 14 Violation of Bodies.mp3-748858f945e05463257c4b9d6b380290.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

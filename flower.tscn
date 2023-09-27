@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dseyk3iqq3y2j"]
+[gd_scene load_steps=36 format=3 uid="uid://dseyk3iqq3y2j"]
 
 [ext_resource type="Texture2D" uid="uid://c4vhv7502aqwv" path="res://flower_animation/pixil-frame-0(1).png" id="1_0a3rn"]
 [ext_resource type="Texture2D" uid="uid://bqfm0i54kr1pu" path="res://flower_animation/pixil-frame-0(3).png" id="2_lhwq8"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://y0vqpcbwrknf" path="res://flower_animation/pixil-frame-0(29).png" id="28_qx0h7"]
 [ext_resource type="Texture2D" uid="uid://b2xfhj3kr6ou4" path="res://wall.png" id="30_u3hl2"]
 [ext_resource type="Script" path="res://scene_switch.gd" id="30_vo6jb"]
+[ext_resource type="AudioStream" uid="uid://ccg1pwc1u7t4w" path="res://music/black sun void - Chapter X - 02 Giant Fly.mp3" id="31_ykyy0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ai65g"]
 animations = [{
@@ -227,5 +228,11 @@ libraries = {
 "": SubResource("AnimationLibrary_tsqqi")
 }
 script = ExtResource("30_vo6jb")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_ykyy0")
+autoplay = true
 
 [connection signal="animation_finished" from="Camera2D2/Sprite2D/black_screne" to="Camera2D2/Sprite2D/black_screne" method="_on_animation_finished"]

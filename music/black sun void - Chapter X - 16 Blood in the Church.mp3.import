@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pbje6an13u81"
+path="res://.godot/imported/black sun void - Chapter X - 16 Blood in the Church.mp3-14261fc93603d99a1eb8c56d9f794dc5.mp3str"
+
+[deps]
+
+source_file="res://music/black sun void - Chapter X - 16 Blood in the Church.mp3"
+dest_files=["res://.godot/imported/black sun void - Chapter X - 16 Blood in the Church.mp3-14261fc93603d99a1eb8c56d9f794dc5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

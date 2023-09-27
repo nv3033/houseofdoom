@@ -7,9 +7,22 @@ Vector2(2, 0), Vector2(2, 0),
 Vector2(2, 0), Vector2(2, 0), 
 Vector2(2, 0), Vector2(2, 0)]
 
+func _ready():
+	if FileAccess.file_exists("user://savegame_inv.save"):
+		var SaveFile = FileAccess.open("user://savegame_inv.save", FileAccess.READ)
+		while SaveFile.get_position() < SaveFile.get_length():
+			var json = JSON.new()
+			var parse_result = json.parse(SaveFile.get_line())
+			var data = json.get_data()
+			items.append(data)
+	print(items)
+	for i in items:
+		draw_item(i[3], i[4])
+
+
 func _input(event):
 	if event is InputEventKey and event.pressed:
-		print(items)
+		#print(items)
 		if event.keycode == KEY_ALT and dialogue_autoload.has_started == false:
 			opened = !opened
 

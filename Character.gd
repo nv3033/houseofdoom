@@ -9,6 +9,34 @@ const DialogueSettings = preload("res://addons/dialogue_manager/components/setti
 
 #get_tree().get_root().get_node("black_screne").play("scene_start")
 
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_ESCAPE:
+			get_tree().change_scene_to_file("res://main_menu.tscn")
+
+func save_pos():
+	var SaveFile = FileAccess.open("user://savegame_pos.save", FileAccess.WRITE)
+	SaveFile.store_line(JSON.stringify(transform.origin))
+
+func save_scn():
+	var SaveFile = FileAccess.open("user://savegame_scn.save", FileAccess.WRITE)
+	SaveFile.store_line(JSON.stringify(get_tree().current_scene.scene_file_path))
+	print(get_tree().current_scene.scene_file_path)
+
+func _ready():
+	save_scn()
+	if FileAccess.file_exists("user://savegame_pos.save"):
+		var SaveFile = FileAccess.open("user://savegame_pos.save", FileAccess.READ)
+		var json = JSON.new()
+		var parse_result = json.parse(SaveFile.get_line())
+		var cords = json.get_data()
+		cords = cords.erase(cords.find("("),1)
+		cords = cords.erase(cords.find(")"),1)
+		cords = cords.erase(cords.find(","),1)
+		print(cords)
+		transform.origin = Vector2(float(cords.left(cords.find(" "))), float(cords.right(cords.find(" "))))
+		#print(transform.origin)
+
 func start_dialogue(dialogue_path):
 	print(dialogue_path)
 	#var resource = load("res://dialogue_1st_scene.dialogue")

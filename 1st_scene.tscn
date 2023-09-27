@@ -1,13 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://bbxictjjlh8fi"]
+[gd_scene load_steps=26 format=3 uid="uid://bbxictjjlh8fi"]
 
-[ext_resource type="PackedScene" uid="uid://bjibwq8kucq4g" path="res://camera_2d.tscn" id="1_mopcd"]
+[ext_resource type="PackedScene" uid="uid://bot0p58m6yelp" path="res://camera_2d.tscn" id="1_mopcd"]
 [ext_resource type="Texture2D" uid="uid://cndxnie03kac" path="res://floor.png" id="2_5fh2h"]
+[ext_resource type="Texture2D" uid="uid://b2xfhj3kr6ou4" path="res://wall.png" id="2_hedr2"]
 [ext_resource type="Script" path="res://Area.gd" id="5_ehmfy"]
 [ext_resource type="Texture2D" uid="uid://cgs4kse2tuwbl" path="res://bible.png" id="7_rwjks"]
 [ext_resource type="Texture2D" uid="uid://hoija4e26tbc" path="res://chest.png" id="8_sg6vy"]
 [ext_resource type="Texture2D" uid="uid://xgwdq37nrccs" path="res://sword.png" id="9_5n481"]
 [ext_resource type="Texture2D" uid="uid://c6jlrh2ukq1p1" path="res://torch.png" id="10_1mpmk"]
 [ext_resource type="PackedScene" uid="uid://dlojt7vqmy663" path="res://character_body_2d.tscn" id="10_nnhhj"]
+[ext_resource type="AudioStream" uid="uid://btqrnasewjwcm" path="res://music/black sun void - Chapter X - 01 Suicide Sun.mp3" id="14_kxgvf"]
 [ext_resource type="Texture2D" uid="uid://cuwijsuti3ugv" path="res://hall.png" id="14_wk0ge"]
 [ext_resource type="Script" path="res://exit_area.gd" id="15_1bqmy"]
 
@@ -146,6 +148,12 @@ shape = SubResource("RectangleShape2D_f4i7q")
 
 [node name="Camera2D" parent="." instance=ExtResource("1_mopcd")]
 
+[node name="back_ground2" type="Sprite2D" parent="Camera2D"]
+modulate = Color(0.435294, 0.435294, 0.435294, 1)
+texture_filter = 3
+position = Vector2(70, 0)
+texture = ExtResource("2_hedr2")
+
 [node name="Floor" type="Sprite2D" parent="."]
 modulate = Color(0.807843, 0.807843, 0.807843, 1)
 texture_filter = 3
@@ -267,7 +275,16 @@ script = ExtResource("15_1bqmy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hall/Area2D"]
 shape = SubResource("RectangleShape2D_y73jg")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1, 0)
+stream = ExtResource("14_kxgvf")
+autoplay = true
+bus = &"music"
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("10_nnhhj")]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="CharacterBody2D"]
+position = Vector2(48, 0)
 
 [connection signal="body_entered" from="Bible/Area2D" to="Bible/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Bible/Area2D" to="Bible/Area2D" method="_on_body_exited"]

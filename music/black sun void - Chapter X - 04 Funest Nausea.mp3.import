@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6lwo72mgseg7"
+path="res://.godot/imported/black sun void - Chapter X - 04 Funest Nausea.mp3-6df70878d5d5e4f1d5624480909f45c1.mp3str"
+
+[deps]
+
+source_file="res://music/black sun void - Chapter X - 04 Funest Nausea.mp3"
+dest_files=["res://.godot/imported/black sun void - Chapter X - 04 Funest Nausea.mp3-6df70878d5d5e4f1d5624480909f45c1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

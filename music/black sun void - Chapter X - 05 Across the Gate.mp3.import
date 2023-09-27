@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ck4yv0gdpr2ai"
+path="res://.godot/imported/black sun void - Chapter X - 05 Across the Gate.mp3-50ff6b35901b3afa4fd3e7a7ce7ad16a.mp3str"
+
+[deps]
+
+source_file="res://music/black sun void - Chapter X - 05 Across the Gate.mp3"
+dest_files=["res://.godot/imported/black sun void - Chapter X - 05 Across the Gate.mp3-50ff6b35901b3afa4fd3e7a7ce7ad16a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

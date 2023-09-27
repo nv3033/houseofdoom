@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgxgut2hkoj7p"
+path="res://.godot/imported/black sun void - Chapter X - 11 Heavy Wings.mp3-843900eca1fe690d568d91f7343a04ef.mp3str"
+
+[deps]
+
+source_file="res://music/black sun void - Chapter X - 11 Heavy Wings.mp3"
+dest_files=["res://.godot/imported/black sun void - Chapter X - 11 Heavy Wings.mp3-843900eca1fe690d568d91f7343a04ef.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

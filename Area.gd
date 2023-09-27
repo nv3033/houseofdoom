@@ -29,5 +29,7 @@ func _input(event):
 					break
 			new_item.append(new_id)
 			player.Inventory.items.append(new_item)
+			var SaveFile = FileAccess.open("user://savegame_inv.save", FileAccess.WRITE)
+			SaveFile.store_line(JSON.stringify(new_item))
 			player.Inventory.draw_item("res://bible.png", new_id)
 			get_parent().queue_free()

@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm2vbyewpvi0l"]
+
+[ext_resource type="PackedScene" uid="uid://bot0p58m6yelp" path="res://camera_2d.tscn" id="1_30wfs"]
+[ext_resource type="Texture2D" uid="uid://bja7plfgqxadf" path="res://chvrch/chvrch_background.png" id="1_rvr4a"]
+[ext_resource type="Texture2D" uid="uid://bhhiensmm8a4d" path="res://chvrch/chvrch_floor.png" id="6_ts6ku"]
+[ext_resource type="PackedScene" uid="uid://dlojt7vqmy663" path="res://character_body_2d.tscn" id="7_ax1b5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t873g"]
+size = Vector2(256, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brbng"]
+size = Vector2(24, 44)
+
+[node name="chvrch" type="Node2D"]
+
+[node name="Camera2D" parent="." instance=ExtResource("1_30wfs")]
+
+[node name="back_ground2" type="Sprite2D" parent="Camera2D"]
+modulate = Color(0.435294, 0.435294, 0.435294, 1)
+texture_filter = 3
+texture = ExtResource("1_rvr4a")
+
+[node name="Floor" type="Sprite2D" parent="."]
+modulate = Color(0.807843, 0.807843, 0.807843, 1)
+texture_filter = 3
+position = Vector2(48, 0)
+texture = ExtResource("6_ts6ku")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_t873g")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(280, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-92, 18)
+shape = SubResource("RectangleShape2D_brbng")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-92, 18)
+shape = SubResource("RectangleShape2D_brbng")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("7_ax1b5")]
+position = Vector2(-73, 0)

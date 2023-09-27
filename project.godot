@@ -11,7 +11,9 @@ config_version=5
 [application]
 
 config/name="House Of Doom"
-run/main_scene="res://1st_scene.tscn"
+run/main_scene="res://main_menu.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="House_Of_Doom_Saves"
 config/features=PackedStringArray("4.1", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"

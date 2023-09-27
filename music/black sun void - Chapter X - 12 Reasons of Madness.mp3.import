@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbe3h51phcs2r"
+path="res://.godot/imported/black sun void - Chapter X - 12 Reasons of Madness.mp3-af5631c89d126435f4365ef6aed21aaf.mp3str"
+
+[deps]
+
+source_file="res://music/black sun void - Chapter X - 12 Reasons of Madness.mp3"
+dest_files=["res://.godot/imported/black sun void - Chapter X - 12 Reasons of Madness.mp3-af5631c89d126435f4365ef6aed21aaf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
