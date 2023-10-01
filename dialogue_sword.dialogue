@@ -1,13 +1,118 @@
-~ this_is_a_node_title
+~ start
 
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-- End the conversation => END
-Nathan: For more information see the online documentation.
+set has_started = true
+do check_state()
 
+A sword.
+Used to slaughter people.
+Or demons.
+if check_item("bible"):
+	I guess.
+	- I can not harm other people.
+		=> harm
+	- I use my prayer to slaughter demons.
+		I use my prayer to slaughter demons.
+		At the same time.
+		Demons use me.
+		In some sence.
+		- It's a great shame to harm someone.
+			It's a great shame to harm someone.
+			I guess.
+			I think i've read something about it.
+			About mercy.
+			How far from mercy am I now.
+			- Maybe I's a point for leaving this place.
+				Maybe I's a point for leaving this place.
+				But I can.
+				Because I have no where to go.
+				My home is in another world.
+				And I don't want to go back.
+				It will be painful.
+				And pointless.
+				=> end_values
+			- Maybe that's because I need to go further.
+				Maybe that's because I need to go further.
+				- And fight for my glory.
+					And fight for my glory.
+					And fight with anyone I will find here.
+					Bacause here on this planet[wait=1] everyone is my enemy.
+					=> end_values
+				- And search glory.
+					And search glory.
+					Inside me.
+					But at the same time.
+					Everywhere else.
+					- Did you find what you exactly are searching here?
+						Ingnorance: Did you find what you exactly are searching here?
+						if check_black_bible():
+							Yes.
+							And it is beautyful.
+							Give me some time.
+							And I will show you.
+							do change_scene_to_desert()
+						else:
+							No.
+							Not now.
+							But I will.
+							Someday.
+							It will be.
+							- The answer.
+								Ingnorance: The answers.
+								The answers...
+								What kind of answers?
+								Why the answers?
+								You are not right.
+								I know everything I need.
+								I just need.
+								Some air to brieth.
+								I just want to go home.
+								=> end_values
+							- The knowledge.
+								Ingnorance: The knowledge.
+								Not really.
+								The knowlendge is everywhere.
+								The truth hides in nowhere.
+								I want to be alone.
+								But in the same time be everywhere.
+								- Do you want to be God?
+									I want to be with God.
+									Standing next to his throne.
+									Like Enoch did.
+									Some time ago.
+									It will be greater then anything.
+									Ingnorance: What a kind of fool.
+									=> end_values
+								- It is impossible.
+									No.
+									It is not.
+									=> end_values
+					- This sounds foolish.
+						Ingnorance: This sounds foolish.
+						...
+						Maybe it is.
+						How do you know?
+						=> end_values
+		- Demons are annoying me...
+			Demons are annoying me[wait=2] every night.
+			=> end_values
+		=> end_values
+	- Maybe it is not time for thoughts like that.(Leave this sword untouched)
+		Maybe it is not time for thoughts like that.
+		=> end_values
+else:
+	I guess.
+	- I can not harm other people.
+		=> harm
+
+~ harm
+I can not harm other people.
+Is there a way not to do it?
+I don't think so.
+But I want to believe.
+do change_scene_back()
+=> end_values
+
+~ end_values
+
+set has_started = false
 => END

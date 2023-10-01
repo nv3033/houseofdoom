@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://dabyeppcdh85g"]
+
+[ext_resource type="PackedScene" uid="uid://bot0p58m6yelp" path="res://camera_2d.tscn" id="1_013jp"]
+[ext_resource type="Texture2D" uid="uid://cgpuj4av4gucl" path="res://desert/desert_background.png" id="2_ey3rx"]
+[ext_resource type="Texture2D" uid="uid://wqe6dl1dvia0" path="res://desert/desert_ground.png" id="3_q0cy0"]
+[ext_resource type="PackedScene" uid="uid://dlojt7vqmy663" path="res://character_body_2d.tscn" id="5_11dkq"]
+[ext_resource type="Texture2D" uid="uid://cuwijsuti3ugv" path="res://hall.png" id="5_kv5m3"]
+[ext_resource type="Script" path="res://exit_area.gd" id="6_plmhf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pb3wm"]
+size = Vector2(256, 6.5)
+
+[sub_resource type="GDScript" id="GDScript_5vvgi"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yitc"]
+
+[node name="desert" type="Node2D"]
+
+[node name="Camera2D" parent="." instance=ExtResource("1_013jp")]
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(256, 0)
+texture = ExtResource("2_ey3rx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(256, 0)
+texture = ExtResource("3_q0cy0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(0, 29.25)
+shape = SubResource("RectangleShape2D_pb3wm")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("2_ey3rx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("3_q0cy0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_pb3wm")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_11dkq")]
+position = Vector2(-70, 18)
+
+[node name="Hall" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(376, 18)
+texture = ExtResource("5_kv5m3")
+script = SubResource("GDScript_5vvgi")
+
+[node name="Area2D" type="Area2D" parent="Hall"]
+script = ExtResource("6_plmhf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hall/Area2D"]
+shape = SubResource("RectangleShape2D_5yitc")

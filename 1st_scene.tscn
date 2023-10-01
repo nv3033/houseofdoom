@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bbxictjjlh8fi"]
+[gd_scene load_steps=27 format=3 uid="uid://bbxictjjlh8fi"]
 
 [ext_resource type="PackedScene" uid="uid://bot0p58m6yelp" path="res://camera_2d.tscn" id="1_mopcd"]
 [ext_resource type="Texture2D" uid="uid://cndxnie03kac" path="res://floor.png" id="2_5fh2h"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://xgwdq37nrccs" path="res://sword.png" id="9_5n481"]
 [ext_resource type="Texture2D" uid="uid://c6jlrh2ukq1p1" path="res://torch.png" id="10_1mpmk"]
 [ext_resource type="PackedScene" uid="uid://dlojt7vqmy663" path="res://character_body_2d.tscn" id="10_nnhhj"]
-[ext_resource type="AudioStream" uid="uid://btqrnasewjwcm" path="res://music/black sun void - Chapter X - 01 Suicide Sun.mp3" id="14_kxgvf"]
+[ext_resource type="AudioStream" uid="uid://btqrnasewjwcm" path="res://music/black sun void - Chapter X - 01 Suicide Sun.mp3" id="11_3v77a"]
 [ext_resource type="Texture2D" uid="uid://cuwijsuti3ugv" path="res://hall.png" id="14_wk0ge"]
 [ext_resource type="Script" path="res://exit_area.gd" id="15_1bqmy"]
 
@@ -135,6 +135,20 @@ _data = {
 "idle": SubResource("Animation_vxva7")
 }
 
+[sub_resource type="GDScript" id="GDScript_isft3"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y73jg"]
 
 [node name="Node2D" type="Node2D"]
@@ -219,6 +233,11 @@ script = ExtResource("5_ehmfy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bible/Area2D"]
 shape = SubResource("RectangleShape2D_4qrde")
 
+[node name="ChestSprite" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(345, 22)
+texture = ExtResource("8_sg6vy")
+
 [node name="Chest" type="Sprite2D" parent="."]
 texture_filter = 3
 position = Vector2(345, 22)
@@ -268,6 +287,7 @@ shape = SubResource("RectangleShape2D_4qrde")
 texture_filter = 3
 position = Vector2(983, 18)
 texture = ExtResource("14_wk0ge")
+script = SubResource("GDScript_isft3")
 
 [node name="Area2D" type="Area2D" parent="Hall"]
 script = ExtResource("15_1bqmy")
@@ -277,14 +297,11 @@ shape = SubResource("RectangleShape2D_y73jg")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1, 0)
-stream = ExtResource("14_kxgvf")
+stream = ExtResource("11_3v77a")
 autoplay = true
 bus = &"music"
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("10_nnhhj")]
-
-[node name="AudioListener2D" type="AudioListener2D" parent="CharacterBody2D"]
-position = Vector2(48, 0)
 
 [connection signal="body_entered" from="Bible/Area2D" to="Bible/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Bible/Area2D" to="Bible/Area2D" method="_on_body_exited"]

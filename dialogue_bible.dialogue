@@ -3,11 +3,11 @@
 set has_started = true
 do check_state()
 
-hm... [wait=1]the bible[wait=2].
+hm... [wait=1]the bible.
 - I remember reading it when I was young.
-	I remember reading it when I was young[wait=2].
+	I remember reading it when I was young.
 	- So many mysteries lay beyond this charapters.
-		So many mysteries lay beyond this charapters[wait=2].
+		So many mysteries lay beyond this charapters.
 		- How dare am I forgetting some lines from it.
 			=> how_dare_am_i
 	- How dare am I forgetting some lines from it.
@@ -15,22 +15,25 @@ hm... [wait=1]the bible[wait=2].
 - Holy scripture... 
 	=> holy_scripture
 - I really should pray more often.[wait=2] My soul is not protected enough. 
-	I really should pray more often.[wait=2] My soul is not protected enough[wait=2].
+	I really should pray more often.[wait=2] My soul is not protected enough.
 	=> end_values
+- Maybe I need to do something else right now.(Leave the Scripture as it is)
+	Maybe I need to do something else right now.
+	=> just_end
 
 ~ how_dare_am_i
-How dare am I forgetting some lines from it[wait=2].
+How dare am I forgetting some lines from it.
 - There was no other book in my house for some time.
 	There was no other book in my house for some time.
 	I vaguely remember reading psalms.
-	All night long[wait=2].
+	All night long.
 	- Old tastamend always seemed more interesting to me.
-		Old tastamend always seemed more interesting to me[wait=2].
-		There was a lot of new things to me [wait=1]that I woundn't know the other way[wait=2]... 
+		Old tastamend always seemed more interesting to me.
+		There was a lot of new things to me [wait=1]that I woundn't know the other way... 
 		- Stories about holy rage...
 			Stories about holy rage which was blessed some time ago.
 			To be one of the spirits I know.
-			How strange is this[wait=2].
+			How strange is this.
 			- I want to be a better person.
 				I want to be a better person.
 				=> if_only_i
@@ -43,19 +46,19 @@ How dare am I forgetting some lines from it[wait=2].
 			=> holy_scripture
 	- New tastamend always seemed more interesting to me.
 		New tastamend always seemed more interesting to me.
-		Particularly the gospels[wait=2].
+		Particularly the gospels.
 		- Gospel of John was the only book I would carry with me until my last breath.
 			Gospel of John was the only book I would carry with me until my last breath.
 			I remember there was some parts I was stunned by.
 			Maybe I can think about it more often.
 			However.
-			It is clear for me I will never be in one of this books[wait=2].
+			It is clear for me I will never be in one of this books.
 			- If only I could write some charapters.
 				=> if_only_i
 			- Or be honored as the writers once was.
 				Or be honored as the writers once was.
 				What a shame.
-				What the thing am I to be so miserable[wait=2].
+				What the thing am I to be so miserable.
 				- I want to be forgived.
 					I want to be forgived.
 					=> if_only_i
@@ -69,36 +72,36 @@ How dare am I forgetting some lines from it[wait=2].
 - If only I could speak with the writers.
 	If only I could speak with the writers.[wait=1] Mysterious masters from the past.
 	I think there were something hidden at the time.
-	This book is so bright but at the same time so obscured[wait=2].
+	This book is so bright but at the same time so obscured.
 	- If only I could write some charapters.
 		=> if_only_i
 - If only I could write some charapters.
 	=> if_only_i
 
 ~ if_only_i
-If only I could write some charapters[wait=2].
+If only I could write some charapters.
 - This would be biggest mistake humanity ever made.
-	This would be biggest mistake humanity ever made[wait=2].
+	This would be biggest mistake humanity ever made
 	=> end_values
 - This would be great honor for me.
-	This would be great honor for me[wait=2].
+	This would be great honor for me.
 	- As the person who is enlighted enough.
 		As the person who is enlighted enough.
-		I don't think it is what should happen[wait=2].
+		I don't think it is what should happen.
 		=> end_values
 	- As a sinner who wants to be cleared.
 		As a sinner who wants to be cleared.
 		This gonna be the only way for me.
-		I don't think it is what should happen[wait=2].
+		I don't think it is what should happen.
 		=> end_values
 
 
 ~ holy_scripture
 Holy scripture...
-...the only way to be out of this world[wait=2].
+...the only way to be out of this world.
 - Death to the world.
 	Death to the world.
-	Is gonna be a long way[wait=2].
+	Is gonna be a long way.
 	- But I am brave enough.
 		But I am brave enough.
 		As the writers of this book.
@@ -117,7 +120,10 @@ Holy scripture...
 	Death of the world will be fast.
 	=> end_values
 
+~ just_end
+set has_started = false
+=> END
 
 ~ end_values
 set has_started = false
-do change_scene()
+do change_scene_to_flower()

@@ -1,0 +1,60 @@
+~ start
+if check_item("bible"):
+	Priest: Greetings.
+	Priest: What have I told you?
+	Priest: It is dark out here.
+	Priest: My church is falling apart.
+	What a disaster.
+	People now don't want to go to the church?
+	Priest: Not really.
+	Priest: There are just no people out here.
+	Maybe I can fix that.
+	Priest: How?
+	=> holy_scriptures_2
+else:
+	I have nothing to speak with you.
+	set has_started = false
+	=> END
+	
+~ holy_scriptures_2
+Priest: Do you even have Holy Scriptures?
+Yes I do.
+I won't speak with you otherwise.
+Priest: So you can bring it to...
+- To the temple of sun.
+	To the temple of sun.
+	if !check_item("sword"):
+		Take this.
+		It will guide you here once again.
+		do give_item("sword")
+	do change_scene("desert", Vector2(-70, 18))
+- To my world.
+	To my world.
+	if !check_item("sword"):
+		Take this.
+		It will guide you here once again.
+		do give_item("sword")
+	do change_scene("street", Vector2(-90, 18))
+- To nowhere.(kill the priest)
+	To nowhere.
+	Ignorance: You don't like him.
+	Of course I do.
+	That's not the case.
+	- So don't do it.
+		So don't do it.
+		=> holy_scriptures_2
+	- You will have blood on your hands.
+		You will have blood on your hands.
+		Who are you to kill other man?
+		Ignorance: I know I will.
+		Ignorance: I will pray the rest of my life for his soul.
+		- So don't do it.
+			So don't do it.
+			=> holy_scriptures_2
+		- That's your choise. Not mine.
+			That's your choise. Not mine.
+			do kill_the_priest() #changes to city
+		- That's your choise. Only yours.
+			That's your choise. Only yours.
+			do kill_the_priest() #changes to city
+=> END

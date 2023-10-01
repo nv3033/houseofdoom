@@ -4,9 +4,7 @@ var SaveFile
 
 func _on_new_game_pressed():
 	SaveFile = FileAccess.open("user://savegame_inv.save", FileAccess.WRITE)
-	SaveFile = FileAccess.open("user://savegame_pos.save", FileAccess.WRITE)
-	SaveFile.store_line(JSON.stringify(Vector2(0, 18)))
-	get_tree().change_scene_to_file("res://1st_scene.tscn")
+	get_tree().change_scene_to_file("res://intro.tscn")
 	pass
 
 func _on_continue_pressed():

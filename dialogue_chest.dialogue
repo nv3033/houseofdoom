@@ -1,13 +1,112 @@
 ~ start
 
-Nathan: [[Hi|Hello|Howdy]], this is my 2nd dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+set has_started = true
 
+Closed.
+It looks old.
+- I wander what's inside.
+	I wander what's inside.
+	I maybe something[wait=2] or someone.
+	The soul trapped inside four walls.
+	- Like the heaven built for it.
+		Like the heaven built for it.
+		...
+		Like the heaven for no one.
+		Because the heaven can not be here on this planet.
+		Rather then hell.
+		So I think there is no one inside.
+		=> silence
+	- Like the hell built for it.
+		Like the hell built for it.
+		Maybe the hell is part of this soul.
+		And it want to escape the world[wait=2] building hell around it.
+		Whatever.
+		Time to think more wildly.
+		How many demons will I find on my way.
+		I want to fight none.
+		Because I'm not a warrior...
+		- ...like you
+			Because I'm not a warrior[wait=2] like you.
+			=> warriors
+		- ...at all 
+			Because I'm not a warrior[wait=2] at all.
+			=> warriors
+- I wander who left it here.
+	I wander who left it here.
+	Inside abandoned dungeon.
+	With crawling vague creatures and shadows everywhere.
+	With no living thing going here in eternity.
+	Maybe it is the part of creation of this place.
+	- Who knows how many more mysteries will I find on my way.
+		Who knows how many more mysteries will I find on my way.
+		- Not knowing where I'm going.
+			Not knowing where I'm going.
+			=> silence
+		- Following the stricted path.
+			Following the stricted path,
+			- following the sun.
+				Following the stricted path,[wait=2] following the sun.
+				To be blessed by it's beauty.
+				And destroyed by it's violence.
+				=> silence
+			- following the moon.
+				Following the stricted path,[wait=2] following the moon.
+				To be shown it's mysteries.
+				- And to die with it.
+					And to die with it.
+					=> silence
+				- And to tell mine.
+					And to tell mine.
+					=> silence
+	- Who knows how many more mysteries will I find here.
+		Who knows how many more mysteries will I find here.
+		=> silence
 => END
+
+~ warriors
+Warriors are different creatures.
+I am more like[wait=2] a sorcerer.
+- That is cursed to be alone.
+	That is cursed to be alone.
+	=> silence
+- That needs to find it's place.
+	That needs to find it's place.
+	=> silence
+
+~ silence
+Oh...[wait=2] The silence of night.
+I can feel the moonlight[wait=1] somewhere far above this place.
+It's going through the ground.
+Inside my body.
+Filling it with pain.
+And sorrow.
+Some morning I will come back to my world.
+That will be[wait=1] a misty morning.
+And I will know when the time will come.
+I think my problem is...
+- ... that I am not brave enough.
+	I think my problem is that I am not brave enough.
+	Some day it will become a huge problem for me.
+	Maybe the reason for my end.
+	- The end will be quick.
+		The end will be quick.
+		Like the click inside my mind.
+		I know I must stop thinking like this.
+		However.
+		I calls me to do so.
+		My therapist told me to stop.
+		Thinking like this.
+		But there are no therapist.
+		In this world anymore.
+		=> end_values
+	- The end will be painless.
+		The end will be painless.
+		=> end_values
+- ... that I am thinking like a fool.
+	I think my problem is that I am thinking like a fool.
+	And it drives me crazy.
+	=> end_values
+=> end_values
+
+~ end_values
+set has_started = false

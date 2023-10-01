@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdvx76q7c8fi"]
+
+[ext_resource type="PackedScene" uid="uid://bot0p58m6yelp" path="res://camera_2d.tscn" id="1_unnvh"]
+[ext_resource type="Texture2D" uid="uid://jg03e52pdg5u" path="res://city/city.png" id="2_fg8n2"]
+[ext_resource type="Texture2D" uid="uid://wqe6dl1dvia0" path="res://desert/desert_ground.png" id="3_cgdwh"]
+[ext_resource type="Script" path="res://Character.gd" id="4_qo76r"]
+[ext_resource type="PackedScene" uid="uid://dlojt7vqmy663" path="res://character_body_2d.tscn" id="5_lxe64"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfgfg"]
+size = Vector2(256, 5)
+
+[node name="city" type="Node2D"]
+
+[node name="Camera2D" parent="." instance=ExtResource("1_unnvh")]
+visible = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("2_fg8n2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.239216, 0.239216, 0.345098, 1)
+texture_filter = 3
+texture = ExtResource("3_cgdwh")
+script = ExtResource("4_qo76r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(0, 29.5)
+shape = SubResource("RectangleShape2D_rfgfg")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_lxe64")]
+position = Vector2(-70, 18)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://c86oymm3es34c"
+path="res://.godot/imported/dialogue_altar.dialogue-33d345aaf71057e47bd2173e625df10d.tres"
+
+[deps]
+
+source_file="res://dialogue_altar.dialogue"
+dest_files=["res://.godot/imported/dialogue_altar.dialogue-33d345aaf71057e47bd2173e625df10d.tres"]
+
+[params]
+
+defaults=true

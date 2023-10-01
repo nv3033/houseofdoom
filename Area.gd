@@ -1,7 +1,14 @@
 extends Area2D
 
 var contains_body = false
-var player
+@onready var player = get_tree().get_nodes_in_group("player")[0]
+var objects = ["bible", "sword", "torch"]
+
+func _process(delta):
+	for i in player.Inventory.items:
+		if i[0] == get_parent().name.to_lower():
+			get_parent().queue_free()
+
 
 func _on_body_entered(body):
 	if body in get_tree().get_nodes_in_group("player"):
@@ -16,20 +23,14 @@ func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_SPACE and contains_body:
 			player.start_dialogue("res://dialogue_" +get_parent().name.to_lower()+".dialogue")
-			var new_item = []
-			new_item.append(get_parent().name.to_lower())
-			new_item.append(get_parent().name.to_lower())
-			new_item.append("res://dialogue_" +get_parent().name.to_lower()+".dialogue")
-			new_item.append("res://" +get_parent().name.to_lower()+".png")
-			var new_id = 0
-			for i in player.Inventory.items:
-				if i[4] == new_id:
-					new_id += 1
-				else:
-					break
-			new_item.append(new_id)
-			player.Inventory.items.append(new_item)
-			var SaveFile = FileAccess.open("user://savegame_inv.save", FileAccess.WRITE)
-			SaveFile.store_line(JSON.stringify(new_item))
-			player.Inventory.draw_item("res://bible.png", new_id)
+			if get_parent().name.to_lower() in objects:
+				var new_item = []
+				new_item.append(get_parent().name.to_lower())
+				new_item.append(get_parent().name.to_lower())
+				new_item.append("res://dialogue_" +get_parent().name.to_lower()+".dialogue")
+				new_item.append("res://" +get_parent().name.to_lower()+".png")
+				player.Inventory.items.append(new_item)
+				var SaveFile = FileAccess.open("user://savegame_inv.save", FileAccess.WRITE)
+				SaveFile.store_line(JSON.stringify(player.Inventory.items))
+				player.Inventory.draw_item("res://" +get_parent().name.to_lower()+".png")
 			get_parent().queue_free()

@@ -2,16 +2,19 @@ extends CharacterBody2D
 
 const SPEED = 20.0
 const JUMP_VELOCITY = -40.0
+var current_step_sound = true
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 const DialogueSettings = preload("res://addons/dialogue_manager/components/settings.gd")
 @onready var Inventory = get_tree().get_nodes_in_group("Inventory")[0]
+@onready var audio_player = $AudioStreamPlayer2D
 
 #get_tree().get_root().get_node("black_screne").play("scene_start")
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_ESCAPE:
+		if event.keycode == KEY_ESCAPE and dialogue_autoload.has_started == false:
+			save_pos()
 			get_tree().change_scene_to_file("res://main_menu.tscn")
 
 func save_pos():
@@ -86,5 +89,15 @@ func _physics_process(delta):
 	animate()
 
 	move_and_slide()
-	
-	
+
+
+
+#connections
+
+func _on_animated_sprite_2d_frame_changed():
+	if current_step_sound and ($AnimatedSprite2D.get_animation() == "walk_left" or $AnimatedSprite2D.get_animation() == "walk_right"):
+		#print("playing")
+		audio_player.play()
+	if $AnimatedSprite2D.get_animation() == "idle_left" or $AnimatedSprite2D.get_animation() == "idle_right":
+		audio_player.stop()
+	current_step_sound = !current_step_sound
