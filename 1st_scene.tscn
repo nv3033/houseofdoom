@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bbxictjjlh8fi"]
+[gd_scene load_steps=28 format=3 uid="uid://bbxictjjlh8fi"]
 
 [ext_resource type="PackedScene" uid="uid://bot0p58m6yelp" path="res://camera_2d.tscn" id="1_mopcd"]
 [ext_resource type="Texture2D" uid="uid://cndxnie03kac" path="res://floor.png" id="2_5fh2h"]
@@ -12,6 +12,17 @@
 [ext_resource type="AudioStream" uid="uid://btqrnasewjwcm" path="res://music/black sun void - Chapter X - 01 Suicide Sun.mp3" id="11_3v77a"]
 [ext_resource type="Texture2D" uid="uid://cuwijsuti3ugv" path="res://hall.png" id="14_wk0ge"]
 [ext_resource type="Script" path="res://exit_area.gd" id="15_1bqmy"]
+
+[sub_resource type="Environment" id="Environment_4245m"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.15
+glow_blend_mode = 0
+fog_density = 0.054
+fog_height = -0.25
+adjustment_enabled = true
+adjustment_contrast = 1.26
+adjustment_saturation = 0.83
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4i7q"]
 size = Vector2(18, 77)
@@ -152,6 +163,9 @@ func _process(delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y73jg"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4245m")
 
 [node name="wall" type="StaticBody2D" parent="."]
 position = Vector2(-36, 3.5)
