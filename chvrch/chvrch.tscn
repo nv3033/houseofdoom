@@ -1,5 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://cm2vbyewpvi0l"]
+[gd_scene load_steps=26 format=3 uid="uid://cm2vbyewpvi0l"]
 
+[ext_resource type="PackedScene" uid="uid://dw1p8ouye5wur" path="res://world_environment.tscn" id="1_2wsbi"]
 [ext_resource type="Texture2D" uid="uid://bja7plfgqxadf" path="res://chvrch/chvrch_background.png" id="1_rvr4a"]
 [ext_resource type="Script" path="res://Camera.gd" id="2_mo033"]
 [ext_resource type="Script" path="res://chvrch/paralax.gd" id="3_lyxlq"]
@@ -80,19 +81,21 @@ animations = [{
 
 [node name="chvrch" type="Node2D"]
 
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_2wsbi")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(48, 0)
 zoom = Vector2(4.5, 4.5)
 script = ExtResource("2_mo033")
 
 [node name="back_ground3" type="Sprite2D" parent="Camera2D"]
-modulate = Color(0.435294, 0.435294, 0.435294, 1)
+modulate = Color(0.792157, 0.792157, 0.792157, 1)
 texture_filter = 3
 texture = ExtResource("1_rvr4a")
 script = ExtResource("3_lyxlq")
 
 [node name="back_ground3" type="Sprite2D" parent="Camera2D/back_ground3"]
-modulate = Color(0.435294, 0.435294, 0.435294, 1)
+modulate = Color(0.803922, 0.803922, 0.803922, 1)
 texture_filter = 3
 position = Vector2(256, 0)
 texture = ExtResource("1_rvr4a")

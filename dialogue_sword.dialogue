@@ -49,7 +49,7 @@ if check_item("bible"):
 							And it is beautyful.
 							Give me some time.
 							And I will show you.
-							do change_scene_to_desert()
+							do change_scene("desert", Vector2(-70, 18))
 						else:
 							No.
 							Not now.

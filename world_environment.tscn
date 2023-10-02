@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw1p8ouye5wur"]
+
+[sub_resource type="Environment" id="Environment_4245m"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.15
+glow_blend_mode = 0
+fog_density = 0.054
+fog_height = -0.25
+adjustment_enabled = true
+adjustment_contrast = 1.26
+adjustment_saturation = 0.83
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_4245m")
