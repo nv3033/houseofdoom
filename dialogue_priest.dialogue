@@ -1,4 +1,5 @@
 ~ start
+set has_started = true
 if check_item("bible"):
 	Priest: Greetings.
 	Priest: What have I told you?
@@ -34,7 +35,7 @@ Priest: So you can bring it to...
 		Take this.
 		It will guide you here once again.
 		do give_item("sword")
-	do change_scene("street", Vector2(-90, 18))
+	do change_scene("street", Vector2(0, 18))
 - To nowhere.(kill the priest)
 	To nowhere.
 	Ignorance: You don't like him.

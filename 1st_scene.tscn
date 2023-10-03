@@ -167,8 +167,15 @@ func _process(delta):
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4245m")
 
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2(-72, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2(17, 0.5)
+shape = SubResource("RectangleShape2D_f4i7q")
+
 [node name="wall" type="StaticBody2D" parent="."]
-position = Vector2(-36, 3.5)
+position = Vector2(988, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
 position = Vector2(17, 0.5)

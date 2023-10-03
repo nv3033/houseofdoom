@@ -1,33 +1,134 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdvx76q7c8fi"]
+[gd_scene load_steps=13 format=3 uid="uid://cdvx76q7c8fi"]
 
+[ext_resource type="Texture2D" uid="uid://dmlqqetbsp1jb" path="res://gleb_sprites/pixil-frame-0(31).png" id="1_dlshj"]
 [ext_resource type="PackedScene" uid="uid://bot0p58m6yelp" path="res://camera_2d.tscn" id="1_unnvh"]
-[ext_resource type="Texture2D" uid="uid://jg03e52pdg5u" path="res://city/city.png" id="2_fg8n2"]
-[ext_resource type="Texture2D" uid="uid://wqe6dl1dvia0" path="res://desert/desert_ground.png" id="3_cgdwh"]
-[ext_resource type="Script" path="res://Character.gd" id="4_qo76r"]
+[ext_resource type="Texture2D" uid="uid://db45wgindihwb" path="res://gleb_sprites/pixil-frame-0(32).png" id="3_deu5v"]
+[ext_resource type="Texture2D" uid="uid://d1t66um7ii2cn" path="res://gleb_sprites/pixil-frame-0(33).png" id="4_0iovl"]
 [ext_resource type="PackedScene" uid="uid://dlojt7vqmy663" path="res://character_body_2d.tscn" id="5_lxe64"]
+[ext_resource type="Texture2D" uid="uid://bwptil3i14ddr" path="res://gleb_sprites/pixil-frame-0 (12).png" id="5_oga7q"]
+[ext_resource type="Texture2D" uid="uid://cr2sx4a42s76m" path="res://gleb_sprites/pixil-frame-0 (7).png" id="6_lnepq"]
+[ext_resource type="Texture2D" uid="uid://l3tbnnj1m3rq" path="res://gleb_sprites/pixil-frame-0(35).png" id="7_so1es"]
+[ext_resource type="Texture2D" uid="uid://uksyompal48" path="res://gleb_sprites/pixil-frame-0 (3).png" id="8_u50mq"]
+[ext_resource type="Texture2D" uid="uid://bpovswwdn3od3" path="res://gleb_sprites/pixil-frame-0 (4).png" id="9_vcgjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht3nc"]
+size = Vector2(18, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfgfg"]
-size = Vector2(256, 5)
+size = Vector2(1086, 6)
 
 [node name="city" type="Node2D"]
 
+[node name="Pixil-frame-0(31)" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(-78, 16)
+texture = ExtResource("1_dlshj")
+
 [node name="Camera2D" parent="." instance=ExtResource("1_unnvh")]
-visible = false
+position = Vector2(0, 0)
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Pixil-frame-0(32)" type="Sprite2D" parent="."]
 texture_filter = 3
-texture = ExtResource("2_fg8n2")
+position = Vector2(-14, 16)
+texture = ExtResource("3_deu5v")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.239216, 0.239216, 0.345098, 1)
+[node name="Pixil-frame-0(33)" type="Sprite2D" parent="."]
 texture_filter = 3
-texture = ExtResource("3_cgdwh")
-script = ExtResource("4_qo76r")
+position = Vector2(178, 16)
+texture = ExtResource("4_0iovl")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+[node name="Pixil-frame-0(31)7" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(78, 16)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("1_dlshj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
-position = Vector2(0, 29.5)
+[node name="Pixil-frame-0(31)2" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(50, 16)
+texture = ExtResource("1_dlshj")
+
+[node name="Pixil-frame-0(31)3" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(242, 16)
+texture = ExtResource("1_dlshj")
+
+[node name="Pixil-frame-0(12)" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(306, 16)
+texture = ExtResource("5_oga7q")
+
+[node name="Pixil-frame-0(7)" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(370, 16)
+texture = ExtResource("6_lnepq")
+
+[node name="Pixil-frame-0(33)2" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(498, 16)
+texture = ExtResource("4_0iovl")
+
+[node name="Pixil-frame-0(35)" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(817, 16)
+texture = ExtResource("7_so1es")
+
+[node name="Pixil-frame-0(3)" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(717, 16)
+scale = Vector2(-1, 1)
+texture = ExtResource("8_u50mq")
+
+[node name="Pixil-frame-0(31)4" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(434, 16)
+texture = ExtResource("1_dlshj")
+
+[node name="Pixil-frame-0(31)5" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(590, 16)
+scale = Vector2(-1, 1)
+texture = ExtResource("1_dlshj")
+
+[node name="Pixil-frame-0(31)6" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(562, 16)
+texture = ExtResource("1_dlshj")
+
+[node name="Pixil-frame-0(32)2" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(689, 16)
+texture = ExtResource("3_deu5v")
+
+[node name="Pixil-frame-0(3)2" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(881, 16)
+texture = ExtResource("8_u50mq")
+
+[node name="Pixil-frame-0(4)" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(944, 16)
+texture = ExtResource("9_vcgjx")
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2(950, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2(17, 0.5)
+shape = SubResource("RectangleShape2D_ht3nc")
+
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2(-154, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2(17, 0.5)
+shape = SubResource("RectangleShape2D_ht3nc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(415, 29)
 shape = SubResource("RectangleShape2D_rfgfg")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_lxe64")]

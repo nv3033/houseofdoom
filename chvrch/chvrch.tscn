@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cm2vbyewpvi0l"]
+[gd_scene load_steps=29 format=3 uid="uid://cm2vbyewpvi0l"]
 
 [ext_resource type="PackedScene" uid="uid://dw1p8ouye5wur" path="res://world_environment.tscn" id="1_2wsbi"]
 [ext_resource type="Texture2D" uid="uid://bja7plfgqxadf" path="res://chvrch/chvrch_background.png" id="1_rvr4a"]
@@ -16,7 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://nerrmcqm7pe8" path="res://chvrch/priest2.png" id="8_k30rb"]
 [ext_resource type="FontFile" uid="uid://bghl5uwdrhy5u" path="res://joystix monospace.otf" id="9_2obmr"]
 [ext_resource type="Texture2D" uid="uid://codobd6x6btol" path="res://chvrch/altar.png" id="9_t1av6"]
+[ext_resource type="Script" path="res://chvrch/Priest.gd" id="14_brdwj"]
 [ext_resource type="Script" path="res://Area.gd" id="15_d5g84"]
+[ext_resource type="Texture2D" uid="uid://3wln072hx545" path="res://chvrch/priest_dead.png" id="18_gn5e1"]
+[ext_resource type="Script" path="res://chvrch/Altar3.gd" id="19_h0d70"]
 
 [sub_resource type="Animation" id="Animation_ojwj0"]
 length = 0.001
@@ -214,6 +217,7 @@ bus = &"music"
 position = Vector2(650, 18)
 rotation = 3.14159
 scale = Vector2(1, -1)
+script = ExtResource("14_brdwj")
 
 [node name="Area2D" type="Area2D" parent="Priest"]
 script = ExtResource("15_d5g84")
@@ -221,19 +225,22 @@ script = ExtResource("15_d5g84")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Priest/Area2D"]
 shape = SubResource("RectangleShape2D_gbvah")
 
-[node name="Priest_sprite" type="AnimatedSprite2D" parent="."]
+[node name="Priest_sprite" type="AnimatedSprite2D" parent="Priest"]
 texture_filter = 3
-position = Vector2(650, 18)
-rotation = 3.14159
-scale = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_lb87r")
 autoplay = "default"
 frame_progress = 0.247108
+
+[node name="Sprite2D" type="Sprite2D" parent="Priest"]
+visible = false
+texture_filter = 3
+texture = ExtResource("18_gn5e1")
 
 [node name="Altar3" type="Sprite2D" parent="."]
 texture_filter = 3
 position = Vector2(589, 18)
 texture = ExtResource("9_t1av6")
+script = ExtResource("19_h0d70")
 
 [node name="Altar" type="Sprite2D" parent="."]
 texture_filter = 3
@@ -246,7 +253,7 @@ script = ExtResource("15_d5g84")
 shape = SubResource("RectangleShape2D_xl6mx")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("7_ax1b5")]
-position = Vector2(-73, 0)
+position = Vector2(-72, 18)
 
 [connection signal="body_entered" from="Priest/Area2D" to="Priest/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Priest/Area2D" to="Priest/Area2D" method="_on_body_exited"]

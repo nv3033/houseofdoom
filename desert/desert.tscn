@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dabyeppcdh85g"]
+[gd_scene load_steps=11 format=3 uid="uid://dabyeppcdh85g"]
 
 [ext_resource type="PackedScene" uid="uid://bot0p58m6yelp" path="res://camera_2d.tscn" id="1_013jp"]
+[ext_resource type="PackedScene" uid="uid://dw1p8ouye5wur" path="res://world_environment.tscn" id="1_buqqy"]
 [ext_resource type="Texture2D" uid="uid://cgpuj4av4gucl" path="res://desert/desert_background.png" id="2_ey3rx"]
 [ext_resource type="Texture2D" uid="uid://wqe6dl1dvia0" path="res://desert/desert_ground.png" id="3_q0cy0"]
 [ext_resource type="PackedScene" uid="uid://dlojt7vqmy663" path="res://character_body_2d.tscn" id="5_11dkq"]
@@ -8,7 +9,7 @@
 [ext_resource type="Script" path="res://exit_area.gd" id="6_plmhf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb3wm"]
-size = Vector2(256, 6.5)
+size = Vector2(256, 6.875)
 
 [sub_resource type="GDScript" id="GDScript_5vvgi"]
 script/source = "extends Sprite2D
@@ -28,6 +29,8 @@ func _process(delta):
 
 [node name="desert" type="Node2D"]
 
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_buqqy")]
+
 [node name="Camera2D" parent="." instance=ExtResource("1_013jp")]
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
@@ -41,9 +44,10 @@ position = Vector2(256, 0)
 texture = ExtResource("3_q0cy0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+position = Vector2(0, 0.45)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
-position = Vector2(0, 29.25)
+position = Vector2(0, 29)
 shape = SubResource("RectangleShape2D_pb3wm")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
@@ -55,6 +59,7 @@ texture_filter = 3
 texture = ExtResource("3_q0cy0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
+position = Vector2(0, 0.45)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
 position = Vector2(0, 29)

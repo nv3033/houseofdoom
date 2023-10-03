@@ -1,6 +1,11 @@
 ~ start
-
-I need to go back.
-do change_scene_back()
+set has_started = true
+Eternity calls me to be alone.
+- And I think I need it.(return back into the dungeon)
+	And I think I need it.
+	do change_scene_back()
+- But I am still not ready.(stay in church)
+	set has_started = false
+	=> END
 
 => END

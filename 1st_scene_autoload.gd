@@ -5,6 +5,8 @@ func check_black_bible():
 	return false
 
 func kill_the_priest():
+	give_item("black_bible")
+	get_tree().change_scene_to_file("res://cross.tscn")
 	pass
 
 func check_state():
@@ -36,6 +38,7 @@ func check_item(name):
 		return false
 
 func change_scene_back():
+	has_started = false
 	var SaveFile = FileAccess.open("user://savegame_pos.save", FileAccess.WRITE)
 	SaveFile.store_line(JSON.stringify(Vector2(0, 18)))
 	SaveFile = FileAccess.open("user://savegame_scn.save", FileAccess.WRITE)
@@ -47,6 +50,7 @@ func change_scene_to_flower():
 	get_tree().change_scene_to_file("res://flower.tscn")
 
 func change_scene(name, pos):
+	has_started = false
 	var SaveFile = FileAccess.open("user://savegame_pos.save", FileAccess.WRITE)
 	SaveFile.store_line(JSON.stringify(pos))
 	SaveFile = FileAccess.open("user://savegame_scn.save", FileAccess.WRITE)
